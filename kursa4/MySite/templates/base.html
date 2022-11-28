@@ -4,12 +4,11 @@
     {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords"
-          content="Mobile App Development, ​We create super-awesome designs, ​Build your dream website today, ​Let&amp;apos;s Get Started, ​How We Help People, Effective Teams, Get in touch">
+    <meta name="keywords" content="Ваши виртуальные машины">
     <meta name="description" content="">
-    <title>Список машин</title>
+    <title>Главная</title>
     <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
-    <link rel="stylesheet" href="{% static 'css/Список-машин.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/Главная.css' %}" media="screen">
     <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
@@ -22,12 +21,13 @@
 		"@type": "Organization",
 		"name": "",
 		"logo": "{% static 'img/4-43527_chimpanzee-standing-hd-png-download-1892552679-removebg-preview.png' %}"
-}</script>
+    }
+</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Список машин">
+    <meta property="og:title" content="Главная">
     <meta property="og:type" content="website">
 </head>
-<body class="u-body u-valign-top u-xl-mode" data-lang="ru">
+<body class="u-body u-xl-mode" data-lang="ru">
 <header class="u-clearfix u-header u-header" id="sec-ccd5">
     <div class="u-clearfix u-sheet u-sheet-1">
         <a href="Главная.html" class="u-image u-logo u-image-1" data-image-width="505" data-image-height="494"
@@ -116,43 +116,14 @@
         </nav>
     </div>
 </header>
-<section class="u-align-center u-clearfix u-section-1" id="sec-5132">
-    <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1">
-        <div class="u-container-layout u-container-layout-1">
-            <h1 class="u-align-center u-text u-title u-text-1">Ваши виртуальные машины</h1>
-            <p class="u-align-center u-large-text u-text u-text-variant u-text-2">Список всех виртуальных машин
-                существующих на данный момент.</p>
-        </div>
-    </div>
-</section>
-<section class="u-align-center u-clearfix u-section-2" id="sec-5c99">
+<section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="5000"
+         data-image-height="3220" id="sec-4f81">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-expanded-width u-table u-table-responsive u-table-1">
-            <table class="u-table-entity u-table-entity-1">
-                <colgroup>
-                    <col width="22.9%">
-                    <col width="77.1%">
-                </colgroup>
-                <thead class="u-align-center u-gradient u-table-header u-text-white u-table-header-1">
-                <tr style="height: 46px;">
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell u-table-cell-1">Название</th>
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell u-table-cell-2">Описание</th>
-                </tr>
-                </thead>
-                <tbody class="u-table-body">
-                {% for vm in all_VM %}
-                    <tr style="height: 76px;">
-                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
-                            {{ vm.name }}
-                        </td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">
-                            {{ vm.description }}
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+        <h1 class="u-align-center u-text u-text-default u-title u-text-1">Ваши виртуальные машины</h1>
+        <p class="u-align-center u-large-text u-text u-text-default u-text-variant u-text-2">Посмотреть виртуальные
+            машины созданные в данный момент.</p>
+        <a href="Список-машин.html"
+           class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-btn u-button-style u-palette-1-base u-btn-1">Просмотр</a>
     </div>
 </section>
 

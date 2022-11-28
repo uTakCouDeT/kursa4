@@ -3,8 +3,8 @@ from django.urls import reverse
 
 
 class VirtualMachine(models.Model):
-    name = models.CharField(max_length=40, verbose_name='Название')
-    description = models.TextField(verbose_name='Описание', default='')
+    name = models.CharField(max_length=40, unique=True, verbose_name='Название')
+    description = models.TextField(verbose_name='Описание')
     ZONE = [
         ('ru-central1-a', 'ru-central-a'),
         ('ru-central1-b', 'ru-central-b'),
@@ -47,7 +47,7 @@ class VirtualMachine(models.Model):
     memory = models.IntegerField(verbose_name='RAM', default=2)
 
     username = models.CharField(max_length=20, verbose_name='Имя пользователя', default='user')
-    ssh_key = models.CharField(max_length=500, verbose_name='SSH-ключ', default='')
+    ssh_key = models.CharField(max_length=500, verbose_name='SSH-ключ')
 
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
