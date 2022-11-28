@@ -44,7 +44,7 @@ class VirtualMachine(models.Model):
     core_fraction = models.IntegerField(choices=CORE_FRACTION, verbose_name='Гарантированная доля vCPU', default=20)
     memory = models.IntegerField(verbose_name='RAM', default=2)
 
-    username = models.CharField(max_length=20, verbose_name='Имя пользователя')
+    username = models.CharField(max_length=20, verbose_name='Имя пользователя', default='user')
     ssh_key = models.CharField(max_length=500, verbose_name='SSH-ключ')
 
     time_create = models.DateTimeField(auto_now_add=True)
