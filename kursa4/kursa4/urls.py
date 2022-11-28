@@ -24,11 +24,10 @@ from MySite import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('Главная.html', views.index, name='index'),
-    path('О-нас.html', views.about, name='about'),
-    path('Контакты.html', views.contacts, name='contacts'),
-    path('Создание-виртуальных-машин.html', views.vmCreate, name='vmCreate'),
-    path('Список-машин.html', views.vmList, name='vmList'),
+    path('about', views.about, name='about'),
+    path('contacts', views.contacts, name='contacts'),
+    path('vm-create', views.vmCreate, name='vmCreate'),
+    path('vm-list', views.vmList, name='vmList'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

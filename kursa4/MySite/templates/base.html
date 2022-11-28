@@ -34,7 +34,7 @@
 <body class="u-body u-xl-mode" data-lang="ru">
 <header class="u-clearfix u-header u-header" id="sec-ccd5">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="Главная.html" class="u-image u-logo u-image-1" data-image-width="505" data-image-height="494"
+        <a href="{% url 'index' %}" class="u-image u-logo u-image-1" data-image-width="505" data-image-height="494"
            title="Главная">
             <img src="{% static 'img/2.jpg' %}"
                  class="u-logo-image u-logo-image-1">
@@ -42,8 +42,7 @@
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
             <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
                 <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                   href="#"
-                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#&quot;}">
+                   href="#">
                     <svg class="u-svg-link" viewBox="0 0 24 24">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
                     </svg>
@@ -61,31 +60,28 @@
                 <ul class="u-nav u-unstyled u-nav-1">
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="Главная.html"
-                            data-lang-en="{&quot;content&quot;:&quot;Главная&quot;,&quot;href&quot;:&quot;Главная.html&quot;}"
+                            href="{% url 'index' %}"
                             style="padding: 10px 20px;">Главная</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="О-нас.html"
-                            data-lang-en="{&quot;content&quot;:&quot;О нас&quot;,&quot;href&quot;:&quot;О-нас.html&quot;}"
+                            href="{% url 'about' %}"
                             style="padding: 10px 20px;">О нас</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="Контакты.html"
-                            data-lang-en="{&quot;content&quot;:&quot;Контакты&quot;,&quot;href&quot;:&quot;Контакты.html&quot;}"
+                            href="{% url 'contacts' %}"
                             style="padding: 10px 20px;">Контакты</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="Создание-виртуальных-машин.html"
-                            data-lang-en="{&quot;content&quot;:&quot;Создание виртуальных машин&quot;,&quot;href&quot;:&quot;Создание-виртуальных-машин.html&quot;}"
+                            href="{% url 'vmCreate' %}"
                             style="padding: 10px 20px;">Создание виртуальных машин</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="Список-машин.html" style="padding: 10px 20px;">Список машин</a>
+                            href="{% url 'vmList' %}"
+                            style="padding: 10px 20px;">Список машин</a>
                     </li>
                 </ul>
             </div>
@@ -94,23 +90,30 @@
                     <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Главная.html"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Главная&quot;,&quot;href&quot;:&quot;Главная.html&quot;}">Главная</a>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="{% url 'index' %}">
+                                    Главная
+                                </a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="О-нас.html"
-                                                      data-lang-en="{&quot;content&quot;:&quot;О нас&quot;,&quot;href&quot;:&quot;О-нас.html&quot;}">О
-                                нас</a>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="{% url 'about' %}">
+                                    О нас
+                                </a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Контакты.html"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Контакты&quot;,&quot;href&quot;:&quot;Контакты.html&quot;}">Контакты</a>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="{% url 'contacts' %}">
+                                    Контакты
+                                </a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="Создание-виртуальных-машин.html"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Создание виртуальных машин&quot;,&quot;href&quot;:&quot;Создание-виртуальных-машин.html&quot;}">Создание
-                                виртуальных машин</a>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="{% url 'vmCreate' %}">
+                                    Создание виртуальных машин
+                                </a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Список-машин.html">Список
-                                машин</a>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="{% url 'vmList' %}">
+                                    Список машин
+                                </a>
                             </li>
                         </ul>
                     </div>
