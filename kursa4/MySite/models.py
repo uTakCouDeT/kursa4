@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class VirtualMachine(models.Model):
     name = models.CharField(max_length=40, verbose_name='Название')
-    description = models.TextField(verbose_name='Описание')
+    description = models.TextField(verbose_name='Описание', default='')
     ZONE = [
         ('ru-central1-a', 'ru-central-a'),
         ('ru-central1-b', 'ru-central-b'),
@@ -33,7 +33,8 @@ class VirtualMachine(models.Model):
         ('network-ssd', 'SSD'),
         ('network-ssd-nonreplicated', 'NR-SSD'),
     ]
-    boot_disk_type = models.CharField(max_length=25, choices=BOOT_DISK_TYPE, default='network-hdd', verbose_name='Тип диска')
+    boot_disk_type = models.CharField(max_length=25, choices=BOOT_DISK_TYPE, default='network-hdd',
+                                      verbose_name='Тип диска')
     boot_disk_size = models.IntegerField(verbose_name='Размер диска', default=15)
 
     cores = models.IntegerField(verbose_name='vCPU', default=2)
@@ -46,7 +47,7 @@ class VirtualMachine(models.Model):
     memory = models.IntegerField(verbose_name='RAM', default=2)
 
     username = models.CharField(max_length=20, verbose_name='Имя пользователя', default='user')
-    ssh_key = models.CharField(max_length=500, verbose_name='SSH-ключ')
+    ssh_key = models.CharField(max_length=500, verbose_name='SSH-ключ', default='')
 
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
