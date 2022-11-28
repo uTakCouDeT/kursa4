@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% load static %}
     <section class="u-align-center u-clearfix u-palette-1-base u-section-1" id="sec-f60b">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-absolute-hcenter-xs u-expanded-height-lg u-expanded-height-md u-expanded-height-xl u-expanded-height-xs u-palette-4-light-1 u-shape u-shape-rectangle u-shape-1"></div>
@@ -15,44 +16,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="u-align-center u-clearfix u-palette-1-base u-valign-middle-sm u-valign-middle-xs u-section-2"
-             id="carousel_e21f">
-        <h4 class="u-text u-text-palette-1-light-2 u-text-1">Характеристики</h4>
-        <h1 class="u-text u-text-2"> Легкодоступность и безопасность</h1>
-        <div class="u-expanded-width u-palette-4-light-1 u-shape u-shape-rectangle u-shape-1"></div>
-        <div class="u-list u-list-1">
-            <div class="u-repeater u-repeater-1">
-                <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-1">
-                    <div class="u-container-layout u-similar-container u-container-layout-1">
-                        <img src="{% static 'img/3.jpg' %}" alt=""
-                             class="u-expanded-width u-image u-image-default u-image-1"
-                             data-image-width="900" data-image-height="878">
-                        <h4 class="u-text u-text-palette-1-base u-text-3"> Веб-хостинг</h4>
-                    </div>
-                </div>
-                <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-2">
-                    <div class="u-container-layout u-similar-container u-container-layout-2">
-                        <img src="{% static 'img/2.jpg' %}" alt=""
-                             class="u-expanded-width u-image u-image-default u-image-2"
-                             data-image-width="900" data-image-height="878">
-                        <h4 class="u-text u-text-palette-1-base u-text-4">Облачное хранилище</h4>
-                    </div>
-                </div>
-                <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-3">
-                    <div class="u-container-layout u-similar-container u-container-layout-3">
-                        <img src="{% static 'img/1.jpg' %}" alt=""
-                             class="u-expanded-width u-image u-image-contain u-image-default u-image-3"
-                             data-image-width="900" data-image-height="878">
-                        <h4 class="u-text u-text-palette-1-base u-text-5"> VPS-сервер</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="Главная.html"
-           class="u-active-white u-border-0 u-btn u-btn-round u-button-style u-hover-white u-palette-4-light-1 u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1">Узнать
-            больше</a>
     </section>
 
     <section class="u-clearfix u-palette-1-dark-1 u-section-3" id="sec-ed1e">
@@ -78,8 +41,9 @@
             <div class="u-align-left u-container-style u-group u-palette-4-light-1 u-group-1">
                 <div class="u-container-layout u-container-layout-3">
                     <h3 class="u-align-center u-custom-font u-font-pt-sans u-text u-text-palette-1-base u-text-2">
-                        Размещение и облачные услуги предлагают предприятиям альтернативные варианты размещения своих
-                        данных</h3>
+                        Облачные услуги предоставляют предприятиям возможность для использования альтернативных
+                        вариантов размещения своих данных
+                    </h3>
                 </div>
             </div>
         </div>
@@ -92,17 +56,21 @@
                     <div class="u-layout-row">
                         <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
                             <div class="u-container-layout u-valign-top u-container-layout-1">
-                                <h1 class="u-align-center u-text u-text-1"> Инфраструктура высокой доступности </h1>
+                                <h1 class="u-align-center u-text u-text-1">
+                                    Создайте свою первую виртуальную машину
+                                </h1>
                                 <div class="u-palette-4-light-1 u-shape u-shape-circle u-shape-1"></div>
                             </div>
                         </div>
                         <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
                             <div class="u-container-layout u-valign-top u-container-layout-2">
-                                <p class="u-text u-text-2">Но для создания виртуальной машины необходим доступ к панели
-                                    администратора</p>
+                                <p class="u-text u-text-2">
+                                    Для создания виртуальной машины необходим доступ к панели администратора
+                                </p>
                                 <a href="Контакты.html"
-                                   class="u-active-white u-btn u-btn-round u-button-style u-hover-white u-palette-4-light-1 u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1">Свяжитесь
-                                    с нами</a>
+                                   class="u-active-white u-btn u-btn-round u-button-style u-hover-white u-palette-4-light-1 u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1">
+                                    Свяжитесь с нами
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -155,12 +123,11 @@
                                             </a>
                                             <input type="submit" value="submit" class="u-form-control-hidden">
                                         </div>
-                                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message
-                                            has
-                                            been sent.
+                                        <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение
+                                            было отправлено.
                                         </div>
-                                        <div class="u-form-send-error u-form-send-message"> Unable to send your message.
-                                            Please fix errors then try again.
+                                        <div class="u-form-send-error u-form-send-message"> Невозможно отправить ваше
+                                            сообщение. Пожалуйста, исправьте ошибки и повторите попытку.
                                         </div>
                                         <input type="hidden" value="" name="recaptchaResponse">
                                         <input type="hidden" name="formServices"
