@@ -4,3 +4,4 @@ from django.apps import AppConfig
 class MysiteConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'MySite'
+    verbose_name = 'Создание виртуальных машин'

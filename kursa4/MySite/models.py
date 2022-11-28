@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class VirtualMachine(models.Model):
@@ -47,8 +48,18 @@ class VirtualMachine(models.Model):
     username = models.CharField(max_length=20, verbose_name='Имя пользователя', default='user')
     ssh_key = models.CharField(max_length=500, verbose_name='SSH-ключ')
 
-    time_create = models.DateTimeField(auto_now_add=True)
-    time_update = models.DateTimeField(auto_now=True)
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
+    time_update = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
+
+    running = models.BooleanField(verbose_name='Активна', default=True)
+
+    class Meta:
+        verbose_name = 'Виртуальные машины'
+        verbose_name_plural = 'Виртуальные машины'
+        ordering = ['time_create']
+
+    def get_absolute_url(self):
+        return reverse('vm', kwargs={'vm_id': self.pk})
 
     def __str__(self):
         return self.name
