@@ -39,7 +39,7 @@ def vmCreate(reqest):
 
 
 def vmList(reqest):
-    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css', 'all_VM': VirtualMachine.objects.all()}
+    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css', 'all_VM': VirtualMachine.objects.all(), 'execFile': 'terraform/aboba.php'}
     return render(
         reqest,
         'Список-машин.html',

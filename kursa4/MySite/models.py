@@ -60,7 +60,7 @@ class VirtualMachine(models.Model):
         ordering = ['time_create']
 
     def get_absolute_url(self):
-        return reverse('vm', kwargs={'vm_id': self.pk})
+        return reverse('vmList')
 
     def __str__(self):
         return self.name

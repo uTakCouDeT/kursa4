@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% load static %}
     <section class="u-align-center u-clearfix u-section-1" id="sec-5132">
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1">
             <div class="u-container-layout u-container-layout-1">
@@ -22,6 +23,9 @@
                     <tr style="height: 46px;">
                         <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-1">Название</th>
                         <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Описание</th>
+                        <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Состояние</th>
+                        <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Измениение шаблона</th>
+                        <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Создание</th>
                     </tr>
                     </thead>
                     <tbody class="u-table-body">
@@ -32,6 +36,27 @@
                             </td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell">
                                 {{ vm.description }}
+                            </td>
+                            <td class="u-border-1 u-border-grey-30 u-table-cell">
+                                {% if vm.running %}
+                                    Активна
+                                {% else %}
+                                    Не активна
+                                {% endif %}
+                            </td>
+                            <td class="u-border-1 u-border-grey-30 u-table-cell">
+                                <a href="admin/MySite/virtualmachine/{{ vm.pk }}/change/"
+                                   class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Изменить
+                                </a>
+                            </td>
+                            </td>
+                            <td class="u-border-1 u-border-grey-30 u-table-cell">
+                                <form action="{% static execFile %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id" value="123">
+                                    <input class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1"
+                                           type="submit" value="Создать">
+                                </form>
                             </td>
                         </tr>
                     {% endfor %}
