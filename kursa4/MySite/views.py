@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from Programm.CreatingVM import *
 from .models import *
@@ -52,21 +52,9 @@ def vmList(reqest):
 
 def CreatedVirtualMachine(reqest, vm_name):
     CreateVirtualMachine(vm_name)
-    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css',
-               'all_VM': VirtualMachine.objects.all()}
-    return render(
-        reqest,
-        'Список-машин.html',
-        context=context,
-    )
+    return redirect('vmList')
 
 
 def DeletedVirtualMachine(reqest, vm_name):
     DeleteVirtualMachine(vm_name)
-    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css',
-               'all_VM': VirtualMachine.objects.all()}
-    return render(
-        reqest,
-        'Список-машин.html',
-        context=context,
-    )
+    return redirect('vmList')
