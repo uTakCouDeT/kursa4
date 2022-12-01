@@ -35,16 +35,16 @@ class VirtualMachine(models.Model):
     ]
     boot_disk_type = models.CharField(max_length=25, choices=BOOT_DISK_TYPE, default='network-hdd',
                                       verbose_name='Тип диска')
-    boot_disk_size = models.IntegerField(verbose_name='Размер диска', default=15)
+    boot_disk_size = models.PositiveSmallIntegerField(verbose_name='Размер диска', default=15)
 
-    cores = models.IntegerField(verbose_name='vCPU', default=2)
+    cores = models.PositiveSmallIntegerField(verbose_name='vCPU', default=2)
     CORE_FRACTION = [
         (20, '20%'),
         (50, '50%'),
         (100, '100%'),
     ]
-    core_fraction = models.IntegerField(choices=CORE_FRACTION, verbose_name='Гарантированная доля vCPU', default=20)
-    memory = models.IntegerField(verbose_name='RAM', default=2)
+    core_fraction = models.PositiveSmallIntegerField(choices=CORE_FRACTION, verbose_name='Гарантированная доля vCPU', default=20)
+    memory = models.PositiveSmallIntegerField(verbose_name='RAM', default=2)
 
     username = models.CharField(max_length=20, verbose_name='Имя пользователя', default='user')
     ssh_key = models.CharField(max_length=500, verbose_name='SSH-ключ')
@@ -52,7 +52,7 @@ class VirtualMachine(models.Model):
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
 
-    running = models.BooleanField(verbose_name='Активна', default=True)
+    running = models.BooleanField(verbose_name='Активна', default=False)
 
     class Meta:
         verbose_name = 'Виртуальные машины'

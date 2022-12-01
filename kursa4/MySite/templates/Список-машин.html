@@ -51,12 +51,15 @@
                             </td>
                             </td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell">
-                                <form action="{% static execFile %}" method="post">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="id" value="123">
-                                    <input class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1"
-                                           type="submit" value="Создать">
-                                </form>
+                                {% if vm.running %}
+                                    <a href="{% url 'DeleteVirtualMachine' vm.name %}"
+                                       class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Удалить
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'CreateVirtualMachine' vm.name %}"
+                                       class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Создать
+                                    </a>
+                                {% endif %}
                             </td>
                         </tr>
                     {% endfor %}

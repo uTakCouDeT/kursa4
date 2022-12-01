@@ -3,11 +3,11 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 703px;
+  min-height: 810px;
 }
 
 .u-section-1 .u-layout-wrap-1 {
-  margin-top: 87px;
+  margin-top: 120px;
   margin-bottom: 0;
 }
 
@@ -56,7 +56,7 @@
 
 .u-section-1 .u-list-1 {
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 134px;
 }
 
 .u-section-1 .u-repeater-1 {
@@ -230,6 +230,4 @@
   .u-section-1 .u-text-2 {
     font-size: 1.25rem;
   }
-}.u-section-2 .u-sheet-1 {
-  min-height: 400px;
 }

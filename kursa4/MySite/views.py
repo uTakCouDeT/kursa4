@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from terraform.CreatingVM import *
 from .models import *
 
 
@@ -39,7 +41,30 @@ def vmCreate(reqest):
 
 
 def vmList(reqest):
-    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css', 'all_VM': VirtualMachine.objects.all(), 'execFile': 'terraform/aboba.php'}
+    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css',
+               'all_VM': VirtualMachine.objects.all()}
+    return render(
+        reqest,
+        'Список-машин.html',
+        context=context,
+    )
+
+
+def CreatedVirtualMachine(reqest, vm_name):
+    CreateVirtualMachine(vm_name)
+    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css',
+               'all_VM': VirtualMachine.objects.all()}
+    return render(
+        reqest,
+        'Список-машин.html',
+        context=context,
+    )
+
+
+def DeletedVirtualMachine(reqest, vm_name):
+    DeleteVirtualMachine(vm_name)
+    context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css',
+               'all_VM': VirtualMachine.objects.all()}
     return render(
         reqest,
         'Список-машин.html',

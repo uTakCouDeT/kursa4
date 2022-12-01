@@ -28,6 +28,8 @@ urlpatterns = [
     path('contacts', views.contacts, name='contacts'),
     path('vm-create', views.vmCreate, name='vmCreate'),
     path('vm-list', views.vmList, name='vmList'),
+    path('created/<str:vm_name>', views.CreatedVirtualMachine, name='CreateVirtualMachine'),
+    path('deleted/<str:vm_name>', views.DeletedVirtualMachine, name='DeleteVirtualMachine'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
