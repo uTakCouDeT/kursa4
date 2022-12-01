@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from terraform.CreatingVM import *
+from Programm.CreatingVM import *
 from .models import *
 
 

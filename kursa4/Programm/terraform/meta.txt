@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: uTakCouDeT
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkMvOI9RujL9PSbNk3rsUP2L3ogcs6ZcFsgk/UhI/NMJtVnN6VOiqvYKIVsSu0TuU7wU/LYbvrMUnH9QM3cxHAlrwXaxQ2k+3v6Z8bGWu4dV4YLVRdRs/B/IcrwRZwIjEuU77m6yZenmFinvW1vk3kG5FdH/zJVQfZjsWXtEwX6lPrVWbAJTovs3ppfDUZ1igFbIjqWxcOVjHnyhWFFpNCiqhUEaC3AUWBIvGPaAadq4Y4tuCjXb5042rrT9DxWDY51eBEkM3yXr+WnVUaq1wy3OxVYlDPvQFkaFwV2TiJgkandZi6d1tQE+aKNB07Kb9gTbYuIhIt0TE4HmkOrDrf user@WIN-PS21LKFE8J4
