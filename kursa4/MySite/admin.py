@@ -9,7 +9,9 @@ class VirtualMachineAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     # list_editable = ('running',)
     list_filter = ('running', 'time_create')
-    fields = ('name', 'description', 'zone', 'image_id', 'boot_disk_type', 'boot_disk_size', 'cores', 'core_fraction', 'memory', 'username', 'ssh_key', 'running', 'time_create', 'time_update')
+    fields = (
+    'name', 'description', 'zone', 'image_id', 'boot_disk_type', 'boot_disk_size', 'cores', 'core_fraction', 'memory',
+    'username', 'ssh_key', 'running', 'time_create', 'time_update')
     readonly_fields = ('time_create', 'time_update', 'running')
 
 

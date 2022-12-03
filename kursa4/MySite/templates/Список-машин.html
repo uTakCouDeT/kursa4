@@ -24,7 +24,7 @@
                         <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-1">Название</th>
                         <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Описание</th>
                         <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Состояние</th>
-                        <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Измениение шаблона</th>
+                        <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Шаблон</th>
                         <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Создание</th>
                     </tr>
                     </thead>
@@ -46,25 +46,38 @@
                             </td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell">
                                 <a href="admin/MySite/virtualmachine/{{ vm.pk }}/change/"
-                                   class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Изменить
+                                   class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Просмотр
                                 </a>
-                            </td>
-                            </td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell">
                                 {% if vm.running %}
-                                    <a href="{% url 'DeleteVirtualMachine' vm.name %}"
-                                       class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Удалить
-                                    </a>
+                                    <form action="{% url 'DeleteVirtualMachine' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="vm_name" value="{{ vm.name }}">
+                                        <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1"
+                                                type="submit">Удалить
+                                        </button>
+                                    </form>
                                 {% else %}
-                                    <a href="{% url 'CreateVirtualMachine' vm.name %}"
-                                       class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Создать
-                                    </a>
+                                    <form action="{% url 'CreateVirtualMachine' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="vm_name" value="{{ vm.name }}">
+                                        <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1"
+                                                type="submit">Создать
+                                        </button>
+                                    </form>
                                 {% endif %}
                             </td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
+                <form action="{% url 'DeleteAllVirtualMachine' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="vm_name" value="{{ vm.name }}">
+                    <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1"
+                            type="submit">Удалить все виртуальные машины
+                    </button>
+                </form>
             </div>
         </div>
     </section>

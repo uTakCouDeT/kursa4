@@ -43,7 +43,8 @@ class VirtualMachine(models.Model):
         (50, '50%'),
         (100, '100%'),
     ]
-    core_fraction = models.PositiveSmallIntegerField(choices=CORE_FRACTION, verbose_name='Гарантированная доля vCPU', default=20)
+    core_fraction = models.PositiveSmallIntegerField(choices=CORE_FRACTION, verbose_name='Гарантированная доля vCPU',
+                                                     default=20)
     memory = models.PositiveSmallIntegerField(verbose_name='RAM', default=2)
 
     username = models.CharField(max_length=20, verbose_name='Имя пользователя', default='user')

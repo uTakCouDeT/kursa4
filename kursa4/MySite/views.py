@@ -4,7 +4,7 @@ from Programm.CreatingVM import *
 from .models import *
 
 
-def index(request):
+def index_view(request):
     context = {'title': 'Главная', 'cssFile': 'css/Главная.css'}
     return render(
         request,
@@ -13,7 +13,7 @@ def index(request):
     )
 
 
-def about(reqest):
+def about_view(reqest):
     context = {'title': 'О нас', 'cssFile': 'css/О-нас.css'}
     return render(
         reqest,
@@ -22,7 +22,7 @@ def about(reqest):
     )
 
 
-def contacts(reqest):
+def contacts_view(reqest):
     context = {'title': 'Контакты', 'cssFile': 'css/Контакты.css'}
     return render(
         reqest,
@@ -31,7 +31,7 @@ def contacts(reqest):
     )
 
 
-def vmCreate(reqest):
+def vm_create_view(reqest):
     context = {'title': 'Создание виртуальных машин', 'cssFile': 'css/Создание-виртуальных-машин.css'}
     return render(
         reqest,
@@ -40,7 +40,7 @@ def vmCreate(reqest):
     )
 
 
-def vmList(reqest):
+def vm_list_view(reqest):
     context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css',
                'all_VM': VirtualMachine.objects.all()}
     return render(
@@ -50,11 +50,19 @@ def vmList(reqest):
     )
 
 
-def CreatedVirtualMachine(reqest, vm_name):
-    CreateVirtualMachine(vm_name)
+def create_virtual_machine_view(reqest):
+    vm_name = reqest.POST.get('vm_name')
+    create_virtual_machine(vm_name)
     return redirect('vmList')
 
 
-def DeletedVirtualMachine(reqest, vm_name):
-    DeleteVirtualMachine(vm_name)
+def delete_virtual_machine_view(reqest):
+    vm_name = reqest.POST.get('vm_name')
+    delete_virtual_machine(vm_name)
+    return redirect('vmList')
+
+
+def delete_all_virtual_machine_view(reqest):
+    vm_name = reqest.POST.get('vm_name')
+    delete_all_virtual_machine(vm_name)
     return redirect('vmList')

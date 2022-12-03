@@ -1,19 +1,3 @@
-"""URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -23,13 +7,14 @@ from MySite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('about', views.about, name='about'),
-    path('contacts', views.contacts, name='contacts'),
-    path('vm-create', views.vmCreate, name='vmCreate'),
-    path('vm-list', views.vmList, name='vmList'),
-    path('created/<str:vm_name>', views.CreatedVirtualMachine, name='CreateVirtualMachine'),
-    path('deleted/<str:vm_name>', views.DeletedVirtualMachine, name='DeleteVirtualMachine'),
+    path('', views.index_view, name='index'),
+    path('about', views.about_view, name='about'),
+    path('contacts', views.contacts_view, name='contacts'),
+    path('vm-create', views.vm_create_view, name='vmCreate'),
+    path('vm-list', views.vm_list_view, name='vmList'),
+    path('create_virtual_machine', views.create_virtual_machine_view, name='CreateVirtualMachine'),
+    path('delete_virtual_machine', views.delete_virtual_machine_view, name='DeleteVirtualMachine'),
+    path('delete_all_virtual_machine', views.delete_all_virtual_machine_view, name='DeleteAllVirtualMachine'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
