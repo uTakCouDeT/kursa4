@@ -1,3 +1,3 @@
-terraform destroy -auto-approve
+cd Programm/terraform
 
-Start-Sleep -Seconds 5
+terraform destroy -auto-approve

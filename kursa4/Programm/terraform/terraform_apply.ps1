@@ -1,4 +1,5 @@
-terraform validate
-terraform apply -auto-approve
+cd Programm/terraform
 
-Start-Sleep -Seconds 5
+terraform validate
+terraform plan
+# terraform apply -auto-approve
