@@ -31,7 +31,7 @@ def create_vm_template(vm_name):
             "    }\n"
             "  }\n"
             "  network_interface {\n"
-            "    subnet_id = yandex_vpc_subnet.subnet.id\n"
+            f"    subnet_id = yandex_vpc_subnet.subnet_{vm.name}.id\n"
             "    nat       = true\n"
             "  }\n"
             "  metadata = {\n"
