@@ -53,7 +53,7 @@
                                     <form action="{% url 'DeleteVirtualMachine' %}" method="post">
                                         {% csrf_token %}
                                         <input type="hidden" name="vm_name" value="{{ vm.name }}">
-                                        <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1"
+                                        <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-2-base u-radius-50 u-btn-1"
                                                 type="submit">Удалить
                                         </button>
                                     </form>
@@ -74,7 +74,7 @@
                 <form action="{% url 'DeleteAllVirtualMachine' %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="vm_name" value="{{ vm.name }}">
-                    <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1"
+                    <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-2-base u-radius-50 u-btn-1"
                             type="submit">Удалить все виртуальные машины
                     </button>
                 </form>
