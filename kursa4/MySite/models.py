@@ -39,8 +39,8 @@ class VirtualMachine(models.Model):
 
     cores = models.PositiveSmallIntegerField(verbose_name='vCPU', default=2)
     CORE_FRACTION = [
+        (5, '5%'),
         (20, '20%'),
-        (50, '50%'),
         (100, '100%'),
     ]
     core_fraction = models.PositiveSmallIntegerField(choices=CORE_FRACTION, verbose_name='Гарантированная доля vCPU',
