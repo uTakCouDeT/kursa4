@@ -55,6 +55,23 @@ class VirtualMachine(models.Model):
 
     running = models.BooleanField(verbose_name='Активна', default=False)
 
+    FIELDS = {
+        "Название": name,
+        "Описание": description,
+        "Зона доступности": zone,
+        "Операционная система": image_id,
+        "Тип диска": boot_disk_type,
+        "Размер диска": boot_disk_size,
+        "vCPU": cores,
+        "Гарантированная доля vCPU": core_fraction,
+        "RAM": memory,
+        "Имя пользователя": username,
+        "SSH-ключ": ssh_key,
+        "Время создания": time_create,
+        "Время изменения": time_update,
+        "Активна": running,
+    }
+
     class Meta:
         verbose_name = 'Виртуальные машины'
         verbose_name_plural = 'Виртуальные машины'

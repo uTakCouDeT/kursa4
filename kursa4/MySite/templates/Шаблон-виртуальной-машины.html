@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+    <section class="u-align-center u-clearfix u-section-1" id="sec-5132">
+        <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1">
+            <div class="u-container-layout u-container-layout-1">
+                <h1 class="u-align-center u-text u-title u-text-1">Шаблон виртуальной машины "{{ vm.name }}"</h1>
+                <p class="u-align-center u-large-text u-text u-text-variant u-text-2">
+                    Информация о данной витуальной машине
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-5c99">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width u-table u-table-responsive u-table-1">
+                <table class="u-table-entity u-table-entity-1">
+                    <colgroup>
+                        <col width="22.9%">
+                        <col width="77.1%">
+                    </colgroup>
+                    <thead class="u-align-center u-gradient u-table-header u-text-white u-table-header-1">
+                    <tr style="height: 46px;">
+                        <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-1">Характеристика</th>
+                        <th class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-2">Описание</th>
+                    </tr>
+                    </thead>
+                    <tbody class="u-table-body">
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Название" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.name }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Описание" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.description }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Зона доступности" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.zone }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "ID операционной системы" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.image_id }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Тип диска" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.boot_disk_type }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Размер диска" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.boot_disk_size }} Гб
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "vCPU" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            количетво ядер - {{ vm.cores }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Гарантированная доля vCPU" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.core_fraction }} %
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "RAM" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.memory }} Гб
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Имя пользователя" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.username }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "SSH-ключ" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.ssh_key }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Время создания" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.time_create }}
+                        </td>
+                    </tr>
+                    <tr style="height: 76px;">
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell">
+                            {{ "Время изменения" }}
+                        </td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                            {{ vm.time_update }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="{% url 'vmList' %}"
+                   class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">
+                    Назад
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

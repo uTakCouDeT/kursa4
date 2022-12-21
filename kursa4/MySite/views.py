@@ -13,56 +13,65 @@ def index_view(request):
     )
 
 
-def about_view(reqest):
+def about_view(request):
     context = {'title': 'О нас', 'cssFile': 'css/О-нас.css'}
     return render(
-        reqest,
+        request,
         'О-нас.html',
         context=context,
     )
 
 
-def contacts_view(reqest):
+def contacts_view(request):
     context = {'title': 'Контакты', 'cssFile': 'css/Контакты.css'}
     return render(
-        reqest,
+        request,
         'Контакты.html',
         context=context,
     )
 
 
-def vm_create_view(reqest):
+def vm_create_view(request):
     context = {'title': 'Создание виртуальных машин', 'cssFile': 'css/Создание-виртуальных-машин.css'}
     return render(
-        reqest,
+        request,
         'Создание-виртуальных-машин.html',
         context=context,
     )
 
 
-def vm_list_view(reqest):
+def vm_list_view(request):
     context = {'title': 'Список виртуальных машин', 'cssFile': 'css/Список-машин.css',
-               'all_VM': VirtualMachine.objects.all()}
+               'all_VM': VirtualMachine.objects.all(), 'password': ' '}
     return render(
-        reqest,
+        request,
         'Список-машин.html',
         context=context,
     )
 
 
-def create_virtual_machine_view(reqest):
-    vm_name = reqest.POST.get('vm_name')
+def vm_view(request, vm_name):
+    context = {'title': f'Шаблон \"{vm_name}\"', 'cssFile': 'css/Список-машин.css',
+               'vm': VirtualMachine.objects.get(name=vm_name)}
+    return render(
+        request,
+        'Шаблон-виртуальной-машины.html',
+        context=context,
+    )
+
+
+def create_virtual_machine_view(request):
+    vm_name = request.POST.get('vm_name')
     create_virtual_machine(vm_name)
     return redirect('vmList')
 
 
-def delete_virtual_machine_view(reqest):
-    vm_name = reqest.POST.get('vm_name')
+def delete_virtual_machine_view(request):
+    vm_name = request.POST.get('vm_name')
     delete_virtual_machine(vm_name)
     return redirect('vmList')
 
 
-def delete_all_virtual_machine_view(reqest):
-    vm_name = reqest.POST.get('vm_name')
-    delete_all_virtual_machine(vm_name)
+def delete_all_virtual_machine_view(request):
+    delete_all_virtual_machine()
     return redirect('vmList')

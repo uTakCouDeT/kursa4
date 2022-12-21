@@ -1,6 +1,8 @@
 from MySite.models import VirtualMachine
 import os
 
+global_password = 'aboba'
+
 
 def create_vm_template(vm_name):
     vm = VirtualMachine.objects.get(name=vm_name)
@@ -97,7 +99,7 @@ def delete_virtual_machine(vm_name):
         log_file.write(f"[{vm.time_update}] deleted vm: {vm.name}\n")
 
 
-def delete_all_virtual_machine(vm_name):
+def delete_all_virtual_machine():
     vm_all = VirtualMachine.objects.all()
     for vm in vm_all:
         delete_vm_template(vm.name)

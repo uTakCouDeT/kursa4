@@ -6,8 +6,8 @@
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1">
             <div class="u-container-layout u-container-layout-1">
                 <h1 class="u-align-center u-text u-title u-text-1">Ваши виртуальные машины</h1>
-                <p class="u-align-center u-large-text u-text u-text-variant u-text-2">Список всех виртуальных машин
-                    существующих на данный момент.</p>
+                <p class="u-align-center u-large-text u-text u-text-variant u-text-2">
+                    Список всех шаблонов существующих на данный момент.</p>
             </div>
         </div>
     </section>
@@ -45,7 +45,7 @@
                                 {% endif %}
                             </td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell">
-                                <a href="admin/MySite/virtualmachine/{{ vm.pk }}/change/"
+                                <a href="{% url 'vm' vm.name %}"
                                    class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Просмотр
                                 </a>
                             <td class="u-border-1 u-border-grey-30 u-table-cell">
@@ -73,7 +73,6 @@
                 </table>
                 <form action="{% url 'DeleteAllVirtualMachine' %}" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="vm_name" value="{{ vm.name }}">
                     <button class="u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-2-base u-radius-50 u-btn-1"
                             type="submit">Удалить все виртуальные машины
                     </button>

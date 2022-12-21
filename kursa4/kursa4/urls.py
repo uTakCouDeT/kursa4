@@ -12,6 +12,7 @@ urlpatterns = [
     path('contacts', views.contacts_view, name='contacts'),
     path('vm-create', views.vm_create_view, name='vmCreate'),
     path('vm-list', views.vm_list_view, name='vmList'),
+    path('vm/<str:vm_name>', views.vm_view, name='vm'),
     path('create_virtual_machine', views.create_virtual_machine_view, name='CreateVirtualMachine'),
     path('delete_virtual_machine', views.delete_virtual_machine_view, name='DeleteVirtualMachine'),
     path('delete_all_virtual_machine', views.delete_all_virtual_machine_view, name='DeleteAllVirtualMachine'),
