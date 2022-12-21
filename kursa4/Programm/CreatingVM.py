@@ -74,7 +74,13 @@ def delete_vm_template(vm_name):
 
 
 def run_terraform_apply_and_change_running_flag(vm):
-    os.startfile(r"Programm\terraform\terraform_apply.ps1")
+    # os.startfile(r"Programm\terraform\terraform_apply.ps1")
+
+    os.system("cd Programm/terraform \n" +
+              "terraform validate \n" +
+              "terraform plan \n" +
+              "terraform apply -auto-approve")
+
     vm.running ^= True
     vm.save()
 
@@ -103,7 +109,13 @@ def delete_all_virtual_machine():
     vm_all = VirtualMachine.objects.all()
     for vm in vm_all:
         delete_vm_template(vm.name)
-    os.startfile(r"Programm\terraform\terraform_apply.ps1")
+    # os.startfile(r"Programm\terraform\terraform_apply.ps1")
+
+    os.system("cd Programm/terraform \n" +
+              "terraform validate \n" +
+              "terraform plan \n" +
+              "terraform apply -auto-approve")
+
     for vm in vm_all:
         vm.running = False
         vm.save()
